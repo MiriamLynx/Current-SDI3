@@ -483,3 +483,6 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.
 
 !ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:43:50.030
 !MESSAGE 3 files modified in module sdi3-1
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:44:10.100
+!MESSAGE 1 files modified in module sdi3-1
