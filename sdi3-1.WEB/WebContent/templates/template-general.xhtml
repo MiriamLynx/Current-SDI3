@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<f:view locale="#{settings.locale}">
+	<h:head>
+		<title>#{msgs.title}</title>
+	</h:head>
+	<h:body>
+		<script>
+			document.body.style.display = 'none';
+		</script>
+		<div class="container">
+			<ui:insert name="navbar">
+				<h:form>
+					<div class="navbar navbar-default navbar-static"
+						style="opacity: 0.9;">
+						<div class="navbar-header">
+							<h:commandLink class="navbar-brand" value="#{msgs.title}" />
+						</div>
+						<ul class="nav navbar-nav">
+							<li class="active"><h:commandLink value="#{msgs.home}" /></li>
+							<li><h:form>
+									<h:selectOneMenu class="selectpicker"
+										value="#{settings.language}" onchange="submit()">
+										<f:selectItems value="#{settings.countries}" />
+									</h:selectOneMenu>
+								</h:form></li>
+							<ui:insert name="option">
+							</ui:insert>
+						</ul>
+					</div>
+				</h:form>
+			</ui:insert>
+			<ui:insert name="cuerpo">Contenido por defecto para el cuerpo</ui:insert>
+			<ui:insert name="pie">
+				<br />
+				<br />
+				<center>--- @Lynxmail - LynxProds. ---</center>
+			</ui:insert>
+			<ui:insert name="includes">
+				<!-- Bootstrap CSS -->
+				<link href="lib/bootstrap-3.2.0-dist/css/bootstrap.min.css"
+					rel="stylesheet" />
+				<!-- Custom CSS -->
+				<link href="css/welcome.css" rel="stylesheet" />
+				<!-- BOOTSTRAP CORE JS -->
+				<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+				<script src="js/jquery-1.11.1.min.js"></script>
+				<!-- Include all compiled plugins (below), or include individual files as needed -->
+				<script src="lib/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+			</ui:insert>
+		</div>
+		<script>
+			$(function() {
+				$(document.body).fadeIn(500);
+			})
+		</script>
+	</h:body>
+</f:view>
+</html>

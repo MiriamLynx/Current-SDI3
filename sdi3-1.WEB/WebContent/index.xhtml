@@ -1,0 +1,47 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/template-general.xhtml"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+	<ui:define name="cuerpo">
+		<div class="container-head" align="center">
+			<h1 class="">#{msgs.welcome}</h1>
+			<button class="btn btn-primary btn-md" data-toggle="modal"
+				data-target="#loginModal">#{msgs.signin}</button>
+			<button class="btn btn-primary btn-md" data-toggle="modal"
+				data-target="#userModal">#{msgs.signup}</button>
+		</div>
+		<div class="container-head" align="center">
+			<h:outputLabel action="#{sesion.setFalse()}" style="color:red;"
+				value="#{msgs.deactivatedAccount}" rendered="#{sesion.deactivated}" />
+			<h:outputLabel action="#{sesion.setFalse()}" style="color:red;"
+				value="#{msgs.wrongPassword}" rendered="#{sesion.wrongPassword}" />
+			<h:outputLabel action="#{sesion.setFalse()}" style="color:red;"
+				value="#{msgs.notFound}" rendered="#{sesion.notFound}" />
+			<h:outputLabel action="#{sesion.setFalse()}" style="color:green;"
+				value="#{msgs.newusersuccess}" rendered="#{sesion.newusersuccess}" />
+			<h:outputLabel action="#{sesion.setFalse()}" style="color:red;"
+				value="#{msgs.newuserfail}" rendered="#{sesion.newuserfail}" />
+		</div>
+		<div class="container-features" align="center">
+			<div class="container-image">
+				<img src="img/computer.png" class="img-responsive" />
+				<h3 class="">#{msgs.tipone}</h3>
+				<h5 class="">#{msgs.subtipone}</h5>
+			</div>
+			<div class="container-image">
+				<img src="img/reading.png" class="img-responsive" />
+				<h3 class="">#{msgs.tiptwo}</h3>
+				<h5 class="">#{msgs.subtiptwo}</h5>
+			</div>
+			<div class="container-image">
+				<img src="img/swag.png" class="img-responsive" />
+				<h3 class="">#{msgs.tipthree}</h3>
+				<h5 class="">#{msgs.subtipthree}</h5>
+			</div>
+		</div>
+		<ui:include src="snippets/loginModal.xhtml" />
+		<ui:include src="snippets/userModal.xhtml" />
+	</ui:define>
+</ui:composition>

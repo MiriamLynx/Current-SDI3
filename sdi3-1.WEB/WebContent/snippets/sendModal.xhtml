@@ -1,0 +1,73 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+	<!-- Send Modal -->
+	<div class="modal fade" id="sendModal" tabindex="-1"
+		style="opacity: 0.9;">
+		<div class="card card-container">
+			<h:form class="form-login" action="send" method="post">
+				<div class="modal-header">
+					<h:button type="button" class="close" data-dismiss="modal"
+						value="x" />
+					<h4 class="modal-title" id="myModalLabel">#{msgs.newMail}</h4>
+				</div>
+				<div class="modal-body">
+					<h:outputLabel>#{msgs.recipients}</h:outputLabel>
+					<h:selectManyListbox value="#{mail.recipients}" id="multiple"
+						class="select2" multiple="multiple" style="width: 100%;">
+						<f:selectItems value="#{sesion.user.contactos}" var="entry"
+							itemLabel="#{entry.nombre}" itemValue="#{entry}" />
+					</h:selectManyListbox>
+					<br /> <br />
+					<h:inputText value="#{mail.subject}" p:required="true"
+						p:requiredMessage="#{msgs.required}" type="text" name="subject"
+						class="form-control input-sm chat-input"
+						p:placeholder="#{msgs.subject}"></h:inputText>
+					<br />
+					<h:outputLabel>#{msgs.body}</h:outputLabel>
+					<h:inputTextarea value="#{mail.body}" p:required="true"
+						p:requiredMessage="#{msgs.required}" name="body"
+						class="form-control"></h:inputTextarea>
+				</div>
+				<div class="modal-footer">
+					<h:commandButton value="#{msgs.saveDraft}"
+						actionListener="#{mail.saveDraft}" class="btn btn-primary">
+						<f:ajax execute="@this" render="renderMe" />
+					</h:commandButton>
+					<h:commandButton value="#{msgs.send}" actionListener="#{mail.send}"
+						class="btn btn-primary">
+						<f:ajax execute="@this" render="renderMe" />
+					</h:commandButton>
+				</div>
+			</h:form>
+		</div>
+	</div>
+	<link rel="stylesheet" type="text/css"
+		href="https://select2.github.io/select2/select2-3.4.1/select2.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://select2.github.io/select2/select2-3.4.1/select2.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://raw.githubusercontent.com/t0m/select2-bootstrap-css/bootstrap3/select2-bootstrap.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script
+		src="https://select2.github.io/select2/select2-3.4.1/select2.js"></script>
+	<script>
+		$('.select2').select2({
+			placeholder : ''
+		});
+
+		$('.select2-remote').select2({
+			data : [ {
+				id : 'A',
+				text : 'A'
+			} ]
+		});
+
+		$('button[data-select2-open]').click(function() {
+			$('#' + $(this).data('select2-open')).select2('open');
+		});
+	</script>
+</ui:composition>
