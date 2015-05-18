@@ -2,12 +2,12 @@ package com.sdi.business;
 
 public interface ServicesFactory {
 
-	UsuarioService createUsuarioService();
+	UsuarioService getUsuarioService();
 
-	CorreoService createCorreoService();
+	CorreoService getCorreoService();
 
-	ContactoService createContactoService();
+	ContactoService getContactoService();
 
-	ResetService createResetService();
+	ResetService getResetService();
 
 }

@@ -7,9 +7,12 @@ import java.sql.SQLException;
 import com.sdi.persistence.ResetDao;
 import com.sdi.persistence.exception.PersistenceException;
 import com.sdi.util.Conf;
-import com.sdi.util.Jdbc;
+import com.sdi.util.JdbcHelper;
 
 public class ResetJdbcDao implements ResetDao {
+
+	private static String CONFIG_FILE = "/jdbc.properties";
+	private JdbcHelper Jdbc = new JdbcHelper(CONFIG_FILE);
 
 	private static Connection con = null;
 

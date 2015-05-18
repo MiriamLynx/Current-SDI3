@@ -36,7 +36,7 @@ public class BeanUsuarios implements Serializable {
 	private String entry;
 
 	public static void init() {
-		UsuarioService us = Factories.services.createUsuarioService();
+		UsuarioService us = Factories.services.getUsuarioService();
 		activated = us.getAllActivated();
 		deactivated = us.getAllDeactivated();
 	}
@@ -57,7 +57,7 @@ public class BeanUsuarios implements Serializable {
 	}
 
 	public void updateUser() {
-		UsuarioService us = Factories.services.createUsuarioService();
+		UsuarioService us = Factories.services.getUsuarioService();
 		Usuario editando = us.find(getLogin(email));
 		success = false;
 		fail = false;

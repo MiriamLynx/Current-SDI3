@@ -42,7 +42,7 @@ public class BeanSesion implements Serializable {
 	private boolean newuserfail;
 
 	public String validate() {
-		UsuarioService us = Factories.services.createUsuarioService();
+		UsuarioService us = Factories.services.getUsuarioService();
 		Usuario user = us.find(login);
 		if (check(user)) {
 			return init(user);
@@ -60,7 +60,7 @@ public class BeanSesion implements Serializable {
 	}
 
 	public void updateProfile() {
-		UsuarioService us = Factories.services.createUsuarioService();
+		UsuarioService us = Factories.services.getUsuarioService();
 		success = false;
 		fail = false;
 		if (check(currentPassword, password, repeatPassword, user)) {
@@ -80,7 +80,7 @@ public class BeanSesion implements Serializable {
 	}
 
 	public void newProfile() {
-		UsuarioService us = Factories.services.createUsuarioService();
+		UsuarioService us = Factories.services.getUsuarioService();
 		setNewusersuccess(false);
 		setNewuserfail(false);
 		if (checkNew(password, repeatPassword)) {
@@ -120,14 +120,14 @@ public class BeanSesion implements Serializable {
 	}
 
 	private boolean checkDidNotExist() {
-		UsuarioService us = Factories.services.createUsuarioService();
+		UsuarioService us = Factories.services.getUsuarioService();
 		Usuario user = us.find(login);
 		return user == null;
 	}
 
 	private String init(Usuario user) {
-		CorreoService cs = Factories.services.createCorreoService();
-		ContactoService cos = Factories.services.createContactoService();
+		CorreoService cs = Factories.services.getCorreoService();
+		ContactoService cos = Factories.services.getContactoService();
 		setNombre(user.getNombre());
 		setApellidos(user.getApellidos());
 		setSession(user);
@@ -242,7 +242,7 @@ public class BeanSesion implements Serializable {
 	}
 
 	public String reset() {
-		ResetService rs = Factories.services.createResetService();
+		ResetService rs = Factories.services.getResetService();
 		rs.reset();
 		BeanUsuarios.init();
 		init(user);

@@ -1,0 +1,5 @@
+package com.sdi.business.impl;
+
+public class LocalEjbServicesLocator {
+
+}

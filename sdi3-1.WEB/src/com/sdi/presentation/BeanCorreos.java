@@ -89,7 +89,7 @@ public class BeanCorreos implements Serializable {
 	}
 
 	public void saveDraft() {
-		CorreoService cs = Factories.services.createCorreoService();
+		CorreoService cs = Factories.services.getCorreoService();
 		Correo correo = new Correo();
 		correo.setAsunto(subject);
 		correo.setCuerpo(body);
@@ -105,7 +105,7 @@ public class BeanCorreos implements Serializable {
 	}
 
 	public void send() {
-		CorreoService cs = Factories.services.createCorreoService();
+		CorreoService cs = Factories.services.getCorreoService();
 		Correo correo = new Correo();
 		correo.setAsunto(subject);
 		correo.setCuerpo(body);

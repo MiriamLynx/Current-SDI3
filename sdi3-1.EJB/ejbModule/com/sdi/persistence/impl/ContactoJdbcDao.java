@@ -13,9 +13,12 @@ import com.sdi.persistence.exception.AlreadyPersistedException;
 import com.sdi.persistence.exception.NotPersistedException;
 import com.sdi.persistence.exception.PersistenceException;
 import com.sdi.util.Conf;
-import com.sdi.util.Jdbc;
+import com.sdi.util.JdbcHelper;
 
 public class ContactoJdbcDao implements ContactoDao {
+
+	private static String CONFIG_FILE = "/jdbc.properties";
+	private JdbcHelper Jdbc = new JdbcHelper(CONFIG_FILE);
 
 	private Connection con = null;
 

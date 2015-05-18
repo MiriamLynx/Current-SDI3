@@ -33,7 +33,7 @@ public class BeanContactos implements Serializable {
 	private String email;
 
 	public void addContact() {
-		ContactoService cs = Factories.services.createContactoService();
+		ContactoService cs = Factories.services.getContactoService();
 		Contacto c = new Contacto();
 		c.setNombre(name);
 		c.setApellidos(surname);

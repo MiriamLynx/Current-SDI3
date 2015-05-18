@@ -1,0 +1,39 @@
+package com.sdi.business.impl;
+
+import com.sdi.business.ContactoService;
+import com.sdi.business.CorreoService;
+import com.sdi.business.ResetService;
+import com.sdi.business.ServicesFactory;
+import com.sdi.business.UsuarioService;
+
+public class LocalEjbServicesLocator implements ServicesFactory {
+
+	private static final String CONTACTOS_SERVICE_JNDI_KEY = "java:global/"
+			+ "sdi3-1/" + "sdi3-1.EJB/" + "EjbContactoService!"
+			+ "com.sdi.business.impl.LocalContactoService";
+
+	@Override
+	public UsuarioService getUsuarioService() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CorreoService getCorreoService() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ContactoService getContactoService() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ResetService getResetService() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

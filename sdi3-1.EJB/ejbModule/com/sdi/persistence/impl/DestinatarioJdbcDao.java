@@ -1,15 +1,21 @@
 package com.sdi.persistence.impl;
 
-import java.sql.*;
-
-import com.sdi.util.Jdbc;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import com.sdi.model.Destinatario;
 import com.sdi.persistence.DestinatarioDao;
-import com.sdi.persistence.exception.*;
+import com.sdi.persistence.exception.AlreadyPersistedException;
+import com.sdi.persistence.exception.NotPersistedException;
+import com.sdi.persistence.exception.PersistenceException;
 import com.sdi.util.Conf;
+import com.sdi.util.JdbcHelper;
 
 public class DestinatarioJdbcDao implements DestinatarioDao {
+
+	private static String CONFIG_FILE = "/jdbc.properties";
+	private JdbcHelper Jdbc = new JdbcHelper(CONFIG_FILE);
 
 	private static Connection con = null;
 

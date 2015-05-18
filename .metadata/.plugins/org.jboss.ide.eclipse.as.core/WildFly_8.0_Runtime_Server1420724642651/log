@@ -312,3 +312,174 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.
 
 !ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2015-05-18 20:53:07.770
 !MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:17:41.009
+!MESSAGE 5 files modified in module sdi3-1.WEB
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:17:41.069
+!MESSAGE 25 files modified in module sdi3-1.EJB
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2015-05-18 21:17:41.934
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2015-05-18 21:17:47.491
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2015-05-18 21:17:56.740
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:18:18.811
+!MESSAGE Module sdi3-1 published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:18:18.956
+!MESSAGE Module sdi3-1.WEB published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:18:19.055
+!MESSAGE Module sdi3-1.EJB published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2015-05-18 21:18:19.901
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2015-05-18 21:18:25.561
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2015-05-18 21:18:58.942
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:30:20.599
+!MESSAGE 2 files modified in module sdi3-1.WEB
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:30:20.619
+!MESSAGE 9 files modified in module sdi3-1.EJB
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2015-05-18 21:30:21.459
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2015-05-18 21:30:27.006
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:31:13.102
+!MESSAGE 8 files modified in module sdi3-1
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:31:13.116
+!MESSAGE 8 files modified in module sdi3-1.EJB
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:31:21.045
+!MESSAGE 2 files modified in module sdi3-1
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:31:23.325
+!MESSAGE 2 files modified in module sdi3-1
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:31:23.355
+!MESSAGE 10 files modified in module sdi3-1.WEB
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:31:23.577
+!MESSAGE 69 files modified in module sdi3-1.EJB
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:31:26.479
+!MESSAGE 8 files modified in module sdi3-1
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:31:26.489
+!MESSAGE 8 files modified in module sdi3-1.EJB
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2015-05-18 21:31:27.846
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2015-05-18 21:31:45.597
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2015-05-18 21:31:51.142
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2015-05-18 21:33:39.612
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2015-05-18 21:33:45.319
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2015-05-18 21:33:50.877
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2015-05-18 21:34:24.925
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2015-05-18 21:34:28.613
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2015-05-18 21:34:34.130
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2015-05-18 21:34:34.238
+!MESSAGE Module sdi3-1.WEB on WildFly 8.0 Runtime Server 2015 (interno) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2015-05-18 21:34:45.779
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2015-05-18 21:34:49.306
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2015-05-18 21:34:54.838
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 0 2015-05-18 21:34:54.973
+!MESSAGE Module sdi3-1.WEB on WildFly 8.0 Runtime Server 2015 (interno) not yet fully deployed. Waiting...
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2015-05-18 21:34:56.320
+!MESSAGE Module sdi3-1.WEB on WildFly 8.0 Runtime Server 2015 (interno) still not ready to be shown in browser. Aborting delay.
+
+!ENTRY org.jboss.ide.eclipse.as.core 2 0 2015-05-18 21:35:16.015
+!MESSAGE Module sdi3-1.WEB on WildFly 8.0 Runtime Server 2015 (interno) still not ready to be shown in browser. Aborting delay.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2015-05-18 21:36:07.361
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:40:31.152
+!MESSAGE Module sdi3-1 published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:40:31.274
+!MESSAGE Module sdi3-1.WEB published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:40:31.346
+!MESSAGE Module sdi3-1.EJB published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2015-05-18 21:40:32.189
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2015-05-18 21:40:37.698
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2015-05-18 21:41:29.168
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:41:37.673
+!MESSAGE Module sdi3-1 published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:41:37.770
+!MESSAGE Module sdi3-1.WEB published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:41:37.839
+!MESSAGE Module sdi3-1.EJB published without error.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2015-05-18 21:41:38.685
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2015-05-18 21:41:44.203
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:42:11.797
+!MESSAGE 1 files modified in module sdi3-1.EJB
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16973825 2015-05-18 21:42:26.351
+!MESSAGE Server processes have been terminated.
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842760 2015-05-18 21:42:30.958
+!MESSAGE Server Starting
+
+!ENTRY org.jboss.ide.eclipse.as.core 1 16842769 2015-05-18 21:42:36.479
+!MESSAGE Server Startup Succeeded
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:43:36.920
+!MESSAGE 1 files modified in module sdi3-1.EJB
+
+!ENTRY org.jboss.ide.eclipse.as.core 0 33685505 2015-05-18 21:43:50.030
+!MESSAGE 3 files modified in module sdi3-1

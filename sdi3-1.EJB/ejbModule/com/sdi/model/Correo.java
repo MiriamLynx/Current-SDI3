@@ -1,11 +1,16 @@
 package com.sdi.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.sdi.business.check.Check;
 
-public class Correo {
+public class Correo implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8790547852387168756L;
 	private Integer id;
 	private double fechahora;
 	private String asunto;
