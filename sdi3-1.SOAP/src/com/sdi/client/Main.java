@@ -6,9 +6,9 @@ import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Scanner;
 
-import com.sdi.business.UsuarioService;
-import com.sdi.business.impl.RemoteEjbServicesLocator;
-import com.sdi.model.Usuario;
+import com.sdi.ws.EjbUsuarioServiceService;
+import com.sdi.ws.Usuario;
+import com.sdi.ws.UsuarioService;
 
 public class Main {
 
@@ -20,7 +20,7 @@ public class Main {
 	private static BufferedReader br;
 
 	public static void main(String[] args) {
-		service = new RemoteEjbServicesLocator().getUsuarioService();
+		service = new EjbUsuarioServiceService().getUsuarioServicePort();
 		System.out.println("\nBienvenido a la consola del cliente REST:");
 		while (!exit) {
 			mostrarMenu();

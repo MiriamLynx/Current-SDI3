@@ -1,2 +1,0 @@
-DRIVER = org.hsqldb.jdbcDriver
-JNDI_DATASOURCE = java:jboss/datasources/NotaneitorDS

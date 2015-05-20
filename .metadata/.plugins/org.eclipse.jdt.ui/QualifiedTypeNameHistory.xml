@@ -28,7 +28,6 @@
 <fullyQualifiedTypeName name="javax.faces.context.FacesContext"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="javax.faces.application.NavigationHandler"/>
-<fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="com.academic.util.LogConfig"/>
 <fullyQualifiedTypeName name="com.sdi.infrastructure.log.Log"/>
 <fullyQualifiedTypeName name="alb.util.log.Logger"/>
@@ -39,4 +38,7 @@
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="com.sdi.business.ServicesFactory"/>
 <fullyQualifiedTypeName name="javax.naming.Context"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
 </qualifiedTypeNameHistroy>

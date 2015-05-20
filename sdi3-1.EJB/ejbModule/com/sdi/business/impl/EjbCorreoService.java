@@ -3,12 +3,14 @@ package com.sdi.business.impl;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.jws.WebService;
 
 import com.sdi.business.impl.classes.correo.FindByLogin;
 import com.sdi.business.impl.classes.correo.Save;
 import com.sdi.model.Correo;
 
 @Stateless
+@WebService(name = "CorreoService")
 public class EjbCorreoService implements RemoteCorreoService,
 		LocalCorreoService {
 
