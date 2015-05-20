@@ -98,10 +98,9 @@ public class Usuario implements Serializable {
 
 	public List<Contacto> getContactos() {
 		List<Contacto> clone = new ArrayList<Contacto>();
-		if (contactos != null) {
-			for (Contacto item : contactos)
-				clone.add(item);
-		}
+		System.out.println(contactos);
+		for (Contacto item : contactos)
+			clone.add(item);
 		return clone;
 	}
 
