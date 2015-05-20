@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 
-import com.sdi.business.UsuarioService;
 import com.sdi.business.impl.classes.usuario.AddUser;
 import com.sdi.business.impl.classes.usuario.FindAllActivated;
 import com.sdi.business.impl.classes.usuario.FindAllDeactivated;
@@ -13,7 +12,8 @@ import com.sdi.business.impl.classes.usuario.Update;
 import com.sdi.model.Usuario;
 
 @Stateless
-public class EjbUsuarioService implements UsuarioService {
+public class EjbUsuarioService implements RemoteUsuarioService,
+		LocalUsuarioService {
 
 	@Override
 	public Usuario find(String login) {

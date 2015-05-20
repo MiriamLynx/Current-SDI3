@@ -4,13 +4,13 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 
-import com.sdi.business.CorreoService;
 import com.sdi.business.impl.classes.correo.FindByLogin;
 import com.sdi.business.impl.classes.correo.Save;
 import com.sdi.model.Correo;
 
 @Stateless
-public class EjbCorreoService implements CorreoService {
+public class EjbCorreoService implements RemoteCorreoService,
+		LocalCorreoService {
 
 	@Override
 	public List<Correo> findByLogin(String login) {

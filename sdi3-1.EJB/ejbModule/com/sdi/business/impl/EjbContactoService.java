@@ -4,14 +4,14 @@ import java.util.List;
 
 import javax.ejb.Stateless;
 
-import com.sdi.business.ContactoService;
 import com.sdi.business.impl.classes.contacto.AddContact;
 import com.sdi.business.impl.classes.contacto.FindAdmin;
 import com.sdi.business.impl.classes.contacto.FindByLogin;
 import com.sdi.model.Contacto;
 
 @Stateless
-public class EjbContactoService implements ContactoService {
+public class EjbContactoService implements RemoteContactoService,
+		LocalContactoService {
 
 	@Override
 	public List<Contacto> findByLogin(String login) {
