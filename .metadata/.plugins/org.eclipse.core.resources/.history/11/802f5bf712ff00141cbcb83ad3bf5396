@@ -1,0 +1,154 @@
+package com.sdi.client;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.List;
+import java.util.Scanner;
+
+import com.sdi.business.UsuarioService;
+import com.sdi.business.impl.RemoteEjbServicesLocator;
+import com.sdi.model.Usuario;
+
+public class Main {
+
+	private static int num;
+	private static Scanner entrada;
+	private static boolean exit;
+	private static UsuarioService service;
+	private static InputStreamReader isr;
+	private static BufferedReader br;
+
+	public static void main(String[] args) {
+		service = new RemoteEjbServicesLocator().getUsuarioService();
+		System.out.println("\nBienvenido a la consola del cliente REST:");
+		while (!exit) {
+			mostrarMenu();
+			getOpcion();
+			procesarOpcion(num);
+		}
+	}
+
+	private static void procesarOpcion(int num) {
+		switch (num) {
+		case 1:
+			listUsers();
+			break;
+		case 2:
+			modify(false);
+			break;
+		case 3:
+			modify(true);
+			break;
+		case 4:
+			addUser();
+			break;
+		case 5:
+			entrada.close();
+			try {
+				br.close();
+				isr.close();
+			} catch (IOException e) {
+				System.out.println("Error al cerrar");
+			}
+			exit = true;
+			break;
+		default:
+			System.out
+					.println("ERROR: Has introducido una opcion no disponible.");
+			break;
+		}
+
+	}
+
+	private static void addUser() {
+		System.out.println("Introduzca su login:");
+		String login = readLine();
+		System.out.println("Introduzca su nombre:");
+		String name = readLine();
+		System.out.println("Introduzca sus apellidos:");
+		String surname = readLine();
+		System.out.println("Introduzca su contraseña:");
+		String password = readLine();
+		System.out.println("Repita la contraseña:");
+		String repeatPassword = readLine();
+		Usuario user = new Usuario();
+		user.setLogin(login);
+		user.setNombre(name);
+		user.setApellidos(surname);
+		user.setPasswd(password);
+		user.setRol("Cliente");
+		if (password.equals(repeatPassword)) {
+			service.newProfile(user);
+		} else {
+			System.out.println("Las contraseñas introducidas no coinciden");
+		}
+	}
+
+	private static void modify(boolean activado) {
+		System.out.println("Introduzca el login del usuario:");
+		String login = readLine();
+		Usuario current = service.find(login);
+		if (current == null) {
+			System.out.println("Usuario no encontrado");
+		} else {
+			current.setActivo(activado);
+			service.updateProfile(current);
+			if (activado == true) {
+				System.out.println("Usuario activado correctamente");
+			} else {
+				System.out.println("Usuario desactivado correctamente");
+			}
+		}
+	}
+
+	private static String readLine() {
+		isr = new InputStreamReader(System.in);
+		br = new BufferedReader(isr);
+		try {
+			return br.readLine();
+		} catch (IOException e) {
+			System.out.println("Error de lectura");
+		}
+		return "";
+	}
+
+	private static int getOpcion() {
+		entrada = new Scanner(System.in);
+		num = entrada.nextInt();
+		return num;
+	}
+
+	public static void mostrarMenu() {
+		System.out.println("\nIntroduzca la opcion que desea:");
+		System.out.println("1- Mostrar usuarios activos e inactivos");
+		System.out.println("2- Desactivar un usuario del sistema");
+		System.out.println("3- Activar un usuario del sistema");
+		System.out.println("4- Añadir un nuevo usuario al sistema");
+		System.out.println("5- Salir");
+
+	}
+
+	private static void listUsers() {
+		List<Usuario> activated = service.getAllActivated();
+		List<Usuario> deactivated = service.getAllDeactivated();
+		printHeader("Usuarios Activados");
+		printUsers(activated);
+		printHeader("Usuarios Desactivados");
+		printUsers(deactivated);
+	}
+
+	private static void printUsers(List<Usuario> list) {
+		for (Usuario u : list) {
+			System.out.println("\t" + "[ Nombre: " + u.getNombre() + ", "
+					+ "Apellidos: " + u.getApellidos() + ", " + "Correo: "
+					+ u.getEmail() + " ]");
+		}
+	}
+
+	private static void printHeader(String string) {
+		System.out.println("\n" + string);
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	}
+
+}

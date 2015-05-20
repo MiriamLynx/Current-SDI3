@@ -12,20 +12,20 @@ import com.sdi.business.UsuarioService;
 
 public class RemoteEjbServicesLocator implements ServicesFactory {
 
-	private static final String CONTACTOS_SERVICE_JNDI_KEY = "java:global/"
-			+ "sdi3-1/" + "sdi3-1.EJB/" + "EjbContactoService!"
+	private static final String CONTACTOS_SERVICE_JNDI_KEY = "ejb:" + "sdi3-1/"
+			+ "sdi3-1.EJB/" + "EjbContactoService!"
 			+ "com.sdi.business.impl.RemoteContactoService";
 
-	private static final String CORREOS_SERVICE_JNDI_KEY = "java:global/"
-			+ "sdi3-1/" + "sdi3-1.EJB/" + "EjbCorreoService!"
+	private static final String CORREOS_SERVICE_JNDI_KEY = "ejb:" + "sdi3-1/"
+			+ "sdi3-1.EJB/" + "EjbCorreoService!"
 			+ "com.sdi.business.impl.RemoteCorreoService";
 
-	private static final String RESET_SERVICE_JNDI_KEY = "java:global/"
-			+ "sdi3-1/" + "sdi3-1.EJB/" + "EjbResetService!"
+	private static final String RESET_SERVICE_JNDI_KEY = "ejb:" + "sdi3-1/"
+			+ "sdi3-1.EJB/" + "EjbResetService!"
 			+ "com.sdi.business.impl.RemoteResetService";
 
-	private static final String USUARIOS_SERVICE_JNDI_KEY = "java:global/"
-			+ "sdi3-1/" + "sdi3-1.EJB/" + "EjbUsuarioService!"
+	private static final String USUARIOS_SERVICE_JNDI_KEY = "ejb:" + "sdi3-1/"
+			+ "sdi3-1.EJB/" + "EjbUsuarioService!"
 			+ "com.sdi.business.impl.RemoteUsuarioService";
 
 	@Override

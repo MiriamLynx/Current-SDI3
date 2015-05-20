@@ -1,0 +1,37 @@
+package com.sdi.client;
+
+import java.util.List;
+
+import com.sdi.business.UsuarioService;
+import com.sdi.business.impl.RemoteEjbServicesLocator;
+import com.sdi.model.Usuario;
+
+public class Main {
+
+	public static void main(String[] args) {
+		listUsers();
+	}
+
+	private static void listUsers() throws Exception {
+		UsuarioService service = new RemoteEjbServicesLocator()
+				.getUsuarioService();
+		printHeader("Usuarios Activados");
+		List<Usuario> activated = service.getAllActivated();
+		printHeader("Usuarios Desactivados");
+		List<Usuario> deactivated = service.getAllDeactivated();
+	}
+
+	private static void printUsers(List<Usuario> list) {
+		for (Usuario u : list) {
+			System.out.println("\t" + "[ Nombre: " + u.getNombre() + ", "
+					+ "Apellidos: " + u.getApellidos() + ", " + "Correo: "
+					+ u.getEmail());
+		}
+	}
+
+	private static void printHeader(String string) {
+		System.out.println(string);
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	}
+
+}

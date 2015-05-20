@@ -1,0 +1,116 @@
+package com.sdi.client;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.List;
+import java.util.Scanner;
+
+import com.sdi.business.UsuarioService;
+import com.sdi.business.impl.RemoteEjbServicesLocator;
+import com.sdi.model.Usuario;
+
+public class Main {
+
+	private static int num;
+	private static Scanner entrada;
+	private static boolean exit;
+
+	public static void main(String[] args) {
+
+		System.out.println("Bienvenido a la consola del cliente REST:");
+		while (!exit) {
+			mostrarMenu();
+			getOpcion();
+			procesarOpcion(num);
+		}
+	}
+
+	private static void procesarOpcion(int num) {
+		switch (num) {
+		case 1:
+			listUsers();
+			break;
+		case 2:
+			modificar(false);
+			break;
+		case 3:
+			modificar(true);
+			break;
+		case 4:
+			listUsers();
+			break;
+		case 5:
+			entrada.close();
+			exit = true;
+			break;
+		default:
+			System.out
+					.println("ERROR: Has introducido una opcion no disponible.");
+			break;
+		}
+
+	}
+
+	private static void modificar(boolean activado) {
+		UsuarioService service = new RemoteEjbServicesLocator()
+				.getUsuarioService();
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		System.out.println("Introduzca el login del usuario:");
+		try {
+			String login = br.readLine();
+			Usuario current = service.find(login);
+			if (current == null) {
+				System.out.println("Usuario no encontrado");
+			} else {
+				current.setActivo(activado);
+				service.updateProfile(current);
+			}
+		} catch (IOException e) {
+			System.out.println("Error de lectura de login");
+		}
+	}
+
+	private static int getOpcion() {
+		entrada = new Scanner(System.in);
+		num = entrada.nextInt();
+
+		return num;
+	}
+
+	public static void mostrarMenu() {
+		System.out.println("Introduzca la opcion que desea:");
+		System.out.println("1- Mostrar usuarios activos e inactivos");
+		System.out.println("2- Desactivar un usuario del sistema");
+		System.out.println("3- Activar un usuario del sistema");
+		System.out.println("4- Añadir un nuevo usuario al sistema");
+		System.out.println("5- Salir");
+
+	}
+
+	private static void listUsers() {
+		UsuarioService service = new RemoteEjbServicesLocator()
+				.getUsuarioService();
+		List<Usuario> activated = service.getAllActivated();
+		List<Usuario> deactivated = service.getAllDeactivated();
+		printHeader("Usuarios Activados");
+		printUsers(activated);
+		printHeader("Usuarios Desactivados");
+		printUsers(deactivated);
+	}
+
+	private static void printUsers(List<Usuario> list) {
+		for (Usuario u : list) {
+			System.out.println("\t" + "[ Nombre: " + u.getNombre() + ", "
+					+ "Apellidos: " + u.getApellidos() + ", " + "Correo: "
+					+ u.getEmail());
+		}
+	}
+
+	private static void printHeader(String string) {
+		System.out.println(string);
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.sdi.client;
+
+public class Main {
+
+	public static void main(String[] args) {
+		run();
+	}
+
+	private void run() throws Exception {
+		AlumnosService service = new RemoteEjbServicesLocator()
+				.getAlumnosService();
+		List<Alumno> alumnos = service.getAlumnos();
+		printHeader();
+		for (Alumno a : alumnos) {
+			printLine(a);
+		}
+	}
+
+}
