@@ -59,7 +59,7 @@
 									<h:inputSecret type="password" name="password"
 										class="form-control input-sm chat-input"
 										p:placeholder="#{msgs.currentpassword}"
-										value="#{sesion.currentPassword}" />
+										value="#{users.currentPassword}" />
 									<br />
 									<h:inputSecret type="password" name="password"
 										class="form-control input-sm chat-input"
