@@ -1,0 +1,8 @@
+package com.sdi.rest;
+
+import javax.ws.rs.Path;
+
+@Path("/UsuarioServiceRs")
+public interface UsuarioServiceRest {
+
+}

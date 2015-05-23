@@ -1,0 +1,114 @@
+package com.sdi.client;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.Credentials;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.jboss.resteasy.client.ClientExecutor;
+import org.jboss.resteasy.client.ProxyFactory;
+import org.jboss.resteasy.client.core.executors.ApacheHttpClient4Executor;
+
+public class RestClient {
+
+	private static int num;
+	private static Scanner entrada;
+	private static boolean exit;
+	private CorreoServiceRest service;
+	private static InputStreamReader isr;
+	private static BufferedReader br;
+
+	public static void main(String[] args) {
+
+		System.out.println("\nBienvenido a la consola del cliente SOAP:");
+		while (!exit) {
+			mostrarMenu();
+			getOpcion();
+			procesarOpcion(num);
+		}
+	}
+
+	public RestClient() {
+		ClientExecutor clientexecutor = credentials("sdi", "password");
+		service = ProxyFactory.create(CorreoServiceRest.class,
+				"http://localhost:8280/sdi3-1.Web/rest/", clientexecutor);
+	}
+
+	public ClientExecutor credentials(String userId, String password) {
+		Credentials credentials = new UsernamePasswordCredentials(userId,
+				password);
+		DefaultHttpClient httpClient = new DefaultHttpClient();
+		httpClient.getCredentialsProvider().setCredentials(AuthScope.ANY,
+				credentials);
+		return new ApacheHttpClient4Executor(httpClient);
+	}
+
+	private static void procesarOpcion(int num) {
+		switch (num) {
+		case 1:
+
+			break;
+		case 2:
+
+			break;
+		case 3:
+
+			break;
+		case 4:
+
+			break;
+		case 5:
+			entrada.close();
+			try {
+				br.close();
+				isr.close();
+			} catch (IOException e) {
+				System.out.println("Error al cerrar");
+			}
+			exit = true;
+			break;
+		default:
+			System.out
+					.println("ERROR: Has introducido una opcion no disponible.");
+			break;
+		}
+
+	}
+
+	private static String readLine() {
+		isr = new InputStreamReader(System.in);
+		br = new BufferedReader(isr);
+		try {
+			return br.readLine();
+		} catch (IOException e) {
+			System.out.println("Error de lectura");
+		}
+		return "";
+	}
+
+	private static int getOpcion() {
+		entrada = new Scanner(System.in);
+		num = entrada.nextInt();
+		return num;
+	}
+
+	public static void mostrarMenu() {
+		System.out.println("\nIntroduzca la opcion que desea:");
+		System.out.println("1- Mostrar usuarios activos e inactivos");
+		System.out.println("2- Desactivar un usuario del sistema");
+		System.out.println("3- Activar un usuario del sistema");
+		System.out.println("4- Añadir un nuevo usuario al sistema");
+		System.out.println("5- Salir");
+
+	}
+
+	private static void printHeader(String string) {
+		System.out.println("\n" + string);
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	}
+
+}

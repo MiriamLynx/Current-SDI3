@@ -3,38 +3,38 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="340" key="DIALOG_Y_ORIGIN"/>
-		<item value="380" key="DIALOG_HEIGHT"/>
 		<item value="727" key="DIALOG_X_ORIGIN"/>
+		<item value="380" key="DIALOG_HEIGHT"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.wst.html.ui.internal.preferences.ui.HTMLTemplatePreferencePage$HTMLEditTemplateDialog_dialogBounds">
+		<item value="611" key="DIALOG_WIDTH"/>
+		<item value="74" key="DIALOG_Y_ORIGIN"/>
+		<item value="435" key="DIALOG_HEIGHT"/>
+		<item value="138" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="isRegEx"/>
 		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="newP" key="selection"/>
+		<item value="new" key="selection"/>
 		<list key="findhistory">
+			<item value="NewP"/>
+			<item value="New"/>
+			<item value="NEW"/>
 			<item value="newP"/>
 			<item value="new"/>
 			<item value="BUUUU"/>
 			<item value="BU"/>
 			<item value="Ã¡"/>
-			<item value="Ã­"/>
-			<item value="Ã³"/>
-			<item value="ï¿½ï¿½"/>
 		</list>
 		<list key="replacehistory">
 			<item value="á"/>
 			<item value="í"/>
 			<item value="ó"/>
 		</list>
-	</section>
-	<section name="org.eclipse.wst.html.ui.internal.preferences.ui.HTMLTemplatePreferencePage$HTMLEditTemplateDialog_dialogBounds">
-		<item value="611" key="DIALOG_WIDTH"/>
-		<item value="74" key="DIALOG_Y_ORIGIN"/>
-		<item value="138" key="DIALOG_X_ORIGIN"/>
-		<item value="435" key="DIALOG_HEIGHT"/>
-		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>

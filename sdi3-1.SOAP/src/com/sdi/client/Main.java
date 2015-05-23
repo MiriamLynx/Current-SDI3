@@ -21,7 +21,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		service = new EjbUsuarioServiceService().getUsuarioServicePort();
-		System.out.println("\nBienvenido a la consola del cliente REST:");
+		System.out.println("\nBienvenido a la consola del cliente SOAP:");
 		while (!exit) {
 			mostrarMenu();
 			getOpcion();

@@ -1,0 +1,33 @@
+package com.sdi.rest;
+
+import java.util.List;
+
+import javax.faces.context.FacesContext;
+
+import com.sdi.business.CorreoService;
+import com.sdi.infrastructure.Factories;
+import com.sdi.model.Correo;
+import com.sdi.model.Usuario;
+
+public class CorreoServiceRestImpl implements CorreoServiceRest {
+
+	CorreoService service = Factories.services.getCorreoService();
+
+	@Override
+	public List<Correo> findByLogin(String login) {
+		return service.findByLogin(login);
+	}
+
+	@Override
+	public void save(String subject, String body, Integer folder,
+			String recipients) {
+		Correo correo = new Correo();
+		correo.setAsunto(subject);
+		correo.setCuerpo(body);
+		correo.setDestinatarios(recipients);
+		correo.setCarpeta(folder);
+		correo.setFechahora(System.currentTimeMillis());
+		service.save(correo);
+	}
+
+}

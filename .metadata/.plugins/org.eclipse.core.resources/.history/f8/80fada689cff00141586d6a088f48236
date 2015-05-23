@@ -1,0 +1,21 @@
+package com.sdi.rest;
+
+import java.util.List;
+
+import com.sdi.model.Correo;
+
+public class CorreoServiceRestImpl implements CorreoServiceRest {
+
+	@Override
+	public List<Correo> findByLogin(String login) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void save(Correo correo) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

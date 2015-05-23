@@ -1,0 +1,40 @@
+package com.sdi.rest;
+
+import java.util.List;
+
+import javax.faces.context.FacesContext;
+
+import com.sdi.business.ContactoService;
+import com.sdi.infrastructure.Factories;
+import com.sdi.model.Contacto;
+import com.sdi.model.Usuario;
+
+public class ContactoServiceRestImpl implements ContactoServiceRest {
+
+	ContactoService service = Factories.services.getContactoService();
+
+	@Override
+	public List<Contacto> findByLogin(String login) {
+		return service.findByLogin(login);
+	}
+
+	@Override
+	public List<Contacto> findAdmin() {
+		return service.findAdmin();
+	}
+
+	@Override
+	public void addContact(String name, String surname, String address,
+			String email, String city, String agenda) {
+		Contacto c = new Contacto();
+		c.setNombre(name);
+		c.setApellidos(surname);
+		c.setDireccion(address);
+		c.setEmail(email);
+		c.setCiudad(city);
+		c.setAgenda_Usuario(((Usuario) FacesContext.getCurrentInstance()
+				.getExternalContext().getSessionMap().get("USER")).getLogin());
+		service.addContact(c);
+	}
+
+}

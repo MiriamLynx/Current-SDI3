@@ -1,0 +1,29 @@
+package com.sdi.rest;
+
+import javax.ws.rs.Path;
+
+@Path("/UsuarioServiceRs")
+public interface UsuarioServiceRest {
+
+	@GET
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public List<Alumno> getAlumnos();
+
+	@GET
+	@Path("{id}")
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	Alumno findById(@PathParam("id") Long id) throws EntityNotFoundException;
+
+	@DELETE
+	@Path("{id}")
+	void deleteAlumno(@PathParam("id") Long id) throws EntityNotFoundException;
+
+	@PUT
+	@Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	void saveAlumno(Alumno alumno) throws EntityAlreadyExistsException;
+
+	@POST
+	@Consumes({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	void updateAlumno(Alumno alumno) throws EntityNotFoundException;
+
+}

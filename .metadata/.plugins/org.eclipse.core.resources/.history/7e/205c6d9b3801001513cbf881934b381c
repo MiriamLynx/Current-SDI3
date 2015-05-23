@@ -1,0 +1,168 @@
+package com.sdi.client;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.List;
+import java.util.Scanner;
+
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.Credentials;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.jboss.resteasy.client.ClientExecutor;
+import org.jboss.resteasy.client.ProxyFactory;
+import org.jboss.resteasy.client.core.executors.ApacheHttpClient4Executor;
+import org.jboss.resteasy.plugins.providers.RegisterBuiltin;
+import org.jboss.resteasy.spi.ResteasyProviderFactory;
+
+public class RestClient {
+
+	private static int num;
+	private static Scanner entrada;
+	private static boolean exit;
+	private static CorreoServiceRest service;
+	private static InputStreamReader isr;
+	private static BufferedReader br;
+	private static String login;
+	private static List<Correo> list;
+
+	public static void main(String[] args) {
+
+		RegisterBuiltin.register(ResteasyProviderFactory.getInstance());
+		new RestClient().run();
+	}
+
+	public void run() {
+		System.out.println("\nBienvenido a la consola del cliente SOAP:");
+		while (!exit) {
+			mostrarMenu();
+			getOpcion();
+			procesarOpcion(num);
+		}
+	}
+
+	public RestClient() {
+		ClientExecutor clientexecutor = credentials("sdi", "password");
+		service = ProxyFactory.create(CorreoServiceRest.class,
+				"http://localhost:8280/sdi3-1.Web/rest/", clientexecutor);
+	}
+
+	public ClientExecutor credentials(String userId, String password) {
+		Credentials credentials = new UsernamePasswordCredentials(userId,
+				password);
+		DefaultHttpClient httpClient = new DefaultHttpClient();
+		httpClient.getCredentialsProvider().setCredentials(AuthScope.ANY,
+				credentials);
+		return new ApacheHttpClient4Executor(httpClient);
+	}
+
+	private static void procesarOpcion(int num) {
+		switch (num) {
+		case 1:
+			listarCorreos();
+			break;
+		case 2:
+			mostrarContenido();
+			break;
+		case 3:
+
+			break;
+		case 4:
+			entrada.close();
+			try {
+				br.close();
+				isr.close();
+			} catch (IOException e) {
+				System.out.println("Error al cerrar");
+			}
+			exit = true;
+			break;
+		default:
+			System.out
+					.println("ERROR: Has introducido una opcion no disponible.");
+			break;
+		}
+
+	}
+
+	private static void listarCorreos() {
+		System.out.println("Introduzca el login del usuario:");
+		login = readLine();
+		printHeader("Correos del usuario " + login);
+		list = service.findByLogin(login);
+		printMail(list);
+	}
+
+	private static String readLine() {
+		isr = new InputStreamReader(System.in);
+		br = new BufferedReader(isr);
+		try {
+			return br.readLine();
+		} catch (IOException e) {
+			System.out.println("Error de lectura");
+		}
+		return "";
+	}
+
+	private static int getOpcion() {
+		entrada = new Scanner(System.in);
+		num = entrada.nextInt();
+		return num;
+	}
+
+	public static void mostrarMenu() {
+		System.out.println("\nIntroduzca la opcion que desea:");
+		System.out.println("1- Listar correos de un usuario");
+		System.out.println("2- Ver el contenido de un correo");
+		System.out.println("3- Enviar un nuevo correo");
+		System.out.println("4- Salir");
+	}
+
+	private static void printMail(List<Correo> list) {
+		for (Correo u : list) {
+			System.out.println("\t" + "[ Identificador: " + u.getId() + ", "
+					+ "Carpeta: " + translate(u.getCarpeta()) + ", "
+					+ "Fecha: " + u.getFormatedDate() + " ]");
+		}
+	}
+
+	private static void printMail() {
+		System.out.println("Introduzca el id del correo a mostrar");
+		int id = getOpcion();
+		int contador = 0;
+		for (Correo u : list) {
+			if (u.getId() == id) {
+				System.out.println("\t" + "[ Identificador: " + u.getId()
+						+ ", " + ", " + "Carpeta: " + translate(u.getCarpeta())
+						+ ", " + "Fecha: " + u.getFormatedDate() + " ]");
+				System.out.println("Asunto [[ " + u.getAsunto() + " ]]");
+				System.out.println("{ " + u.getCuerpo() + "}");
+				contador++;
+			}
+		}
+		if (contador == 0) {
+			System.out
+					.println("No se ha encontrado dicho correo en la carpeta de "
+							+ login);
+		}
+	}
+
+	private static String translate(int folder) {
+		switch (folder) {
+		case 1:
+			return "Enviados";
+		case 2:
+			return "Borradores";
+		case 3:
+			return "Eliminados";
+		}
+		return "";
+	}
+
+	private static void printHeader(String string) {
+		System.out.println("\n" + string);
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+	}
+
+}

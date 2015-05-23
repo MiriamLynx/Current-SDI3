@@ -1,0 +1,11 @@
+package com.sdi.rest;
+
+public class ResetServiceRestImpl implements ResetServiceRest {
+
+	@Override
+	public void reset() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

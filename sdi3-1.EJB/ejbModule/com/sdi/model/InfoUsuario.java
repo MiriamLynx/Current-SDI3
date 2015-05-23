@@ -2,6 +2,10 @@ package com.sdi.model;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "infousuario")
 public class InfoUsuario implements Serializable {
 
 	/**
@@ -13,6 +17,7 @@ public class InfoUsuario implements Serializable {
 	private String apellidos;
 	private String email;
 
+	@XmlElement
 	public Long getId() {
 		return id;
 	}
@@ -21,6 +26,7 @@ public class InfoUsuario implements Serializable {
 		this.id = id;
 	}
 
+	@XmlElement
 	public String getNombre() {
 		return nombre;
 	}
@@ -29,6 +35,7 @@ public class InfoUsuario implements Serializable {
 		this.nombre = nombre;
 	}
 
+	@XmlElement
 	public String getApellidos() {
 		return apellidos;
 	}
@@ -37,6 +44,7 @@ public class InfoUsuario implements Serializable {
 		this.apellidos = apellidos;
 	}
 
+	@XmlElement
 	public String getEmail() {
 		return email;
 	}

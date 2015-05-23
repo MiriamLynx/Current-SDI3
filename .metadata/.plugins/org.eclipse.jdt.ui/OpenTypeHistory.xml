@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=sdi3-1.WEB/src&lt;com.sdi.rest{UsuarioServiceRest.java[UsuarioServiceRest" modifiers="513" timestamp="1432200024511"/>
+<typeInfo handle="=sdi3-1.EJB/ejbModule&lt;com.sdi.persistence{UsuarioDao.java[UsuarioDao" modifiers="513" timestamp="1431972800415"/>
+<typeInfo handle="=sdi3-1.WEB/src&lt;com.sdi.rest{ContactoServiceRest.java[ContactoServiceRest" modifiers="513" timestamp="1432200198335"/>
+<typeInfo handle="=sdi3-1.WEB/src&lt;com.sdi.rest{CorreoServiceRest.java[CorreoServiceRest" modifiers="513" timestamp="1432200278223"/>
+<typeInfo handle="=sdi3-1.EJB/ejbModule&lt;com.sdi.persistence{CorreoDao.java[CorreoDao" modifiers="513" timestamp="1431972800408"/>
+<typeInfo handle="=sdi3-1.WEB/src&lt;com.sdi.rest{ResetServiceRest.java[ResetServiceRest" modifiers="513" timestamp="1432200303761"/>
+<typeInfo handle="=sdi3-1.EJB/ejbModule&lt;com.sdi.persistence{ResetDao.java[ResetDao" modifiers="513" timestamp="1431972800414"/>
+</typeInfoHistroy>

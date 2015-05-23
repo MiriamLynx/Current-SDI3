@@ -1,0 +1,39 @@
+package com.sdi.rest;
+
+import java.util.List;
+
+import com.sdi.model.Usuario;
+
+public class UsuarioServiceRestImpl implements UsuarioServiceRest {
+
+	@Override
+	public Usuario find(String login) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void updateProfile(Usuario user) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Usuario> getAllActivated() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Usuario> getAllDeactivated() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void newProfile(Usuario user) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
